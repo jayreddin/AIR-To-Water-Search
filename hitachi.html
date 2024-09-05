@@ -1,0 +1,196 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Joule Victorum - Air To Water</title>
+          <style>
+            body {
+              font-family: sans-serif;
+              text-align: center;
+            }
+
+            .menu-button, .back-button {
+              padding: 10px 20px;
+              margin: 20px;
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              text-decoration: none;
+            }
+
+            .search-bar {
+              display: flex;
+              justify-content: center;
+              margin-top: 20px;
+              align-items: center;
+            }
+
+            select {
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+              width: 100px;
+              margin-right: 10px;
+            }
+
+            button {
+              padding: 8px 15px;
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+              background-color: #3e8e41;
+            }
+
+            #searchResults {
+              margin-top: 10px;
+            }
+
+            textarea {
+              width: 300px;
+              height: 100px;
+              resize: vertical;
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Joule Victorum</h1>
+          <a href="index.html" class="back-button">Back to Home</a>
+          <a href="#" class="menu-button">Menu</a>
+
+          <div class="search-bar">
+            <select id="searchInput">
+              <option value="3">3</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="23">23</option>
+              <option value="25">25</option>
+              <option value="40">40</option>
+              <option value="61">61</option>
+              <option value="62">62</option>
+              <option value="63">63</option>
+              <option value="70">70</option>
+              <option value="72">72</option>
+              <option value="73">73</option>
+              <option value="74">74</option>
+              <option value="75">75</option>
+              <option value="76">76</option>
+              <option value="77">77</option>
+              <option value="78">78</option>
+              <option value="79">79</option>
+              <option value="80">80</option>
+              <option value="81">81</option>
+              <option value="100">100</option>
+              <option value="101">101</option>
+              <option value="102">102</option>
+              <option value="104">104</option>
+              <option value="105">105</option>
+              <option value="106">106</option>
+              <option value="129">129</option>
+              <option value="130">130</option>
+              <option value="132">132</option>
+              <option value="134">134</option>
+              <option value="135">135</option>
+              <option value="151">151</option>
+              <option value="152">152</option>
+              <option value="153">153</option>
+              <option value="154">154</option>
+              <option value="155">155</option>
+              <option value="156">156</option>
+              <option value="157">157</option>
+            </select>
+            <button onclick="searchHiddenText()">Search</button>
+          </div>
+
+          <textarea id="searchResults" readonly></textarea> 
+
+          <div id="hiddenText" style="display: none;">
+            3 Communication Transmission Alarm (Not outdoor unit detected) Loose, disconnected, broken or short-circuited connector,
+            11 Indoor Water inlet thermistor abnormally (THMwi) Loose, disconnected, broken or short-circuited connector,
+            12 Indoor Water outlet thermistor abnormally (THMwo) Loose, disconnected, broken or short-circuited connector,
+            13 Indoor Indoor Liquid Pipe Temp Thermistor Abnormality (THMl) Loose, disconnected, broken or short-circuited connector,
+            14 Indoor Indoor Gas Pipe Temperature Thermistor Abnormality (THMg) Loose, disconnected, broken or short-circuited connector,
+            15 Indoor Water Circuit 2 thermistor abnormally (THMwo2) Loose, disconnected, broken or short-circuited connector,
+            16 Indoor Water DHW thermistor abnormally (THMdhwt) Loose, disconnected, broken or short-circuited connector,
+            17 Indoor Auxiliary sensor 2 thermistor abnormally (THMaux2) Loose, disconnected, broken or short-circuited connector,
+            18 Indoor Auxiliary sensor 1 thermistor abnormally (THMaux1) Loose, disconnected, broken or short-circuited connector,
+            19 Indoor Water Plate HEX pipe thermistor abnormally (THMwohp) Loose, disconnected, broken or short-circuited connector,
+            19 Indoor Suction R134a pipe thermistor abnormally (THMs) Loose, disconnected, broken or short-circuited connector,
+            23 Indoor Discharge R134a pipe thermistor abnormally (THMd) Loose, disconnected, broken or short-circuited connector,
+            25 Indoor Auxiliary sensor 3 thermistor abnormally (THMaux3) Loose, disconnected, broken or short-circuited connector,
+            40 Indoor Incorrect LCD setting Current LCD configuration does not allow proper operation,
+            61 Indoor No Cascade Messages. Triggered in case unit is configured to work against cascade control and: - No messages have been received for 180 seconds. - No messages have been received from beginning of operation. In case this alarm appears, software stops Indoor and Outdoor operations until communication is restored. Loose, disconnected, broken or short-circuited connector,
+            62 Indoor Central mismatch. Triggered in case YUTAKI CASCADE CONTROLLER is configured and they are received central messages or central control is configured and they are received messages form YUTAKI CASCADE CONTROLLER. In case this alarm appears, software stops Indoor and Outdoor operations until system is properly configured Loose, disconnected, broken or short-circuited connector,
+            63 Communication Transmission error between Central and indoor communication Indoor fuse meltdown, Indoor/central connection wiring (breaking, wiring error, etc.),
+            70 Indoor Hydraulic alarm flow & Water Pump malfunction Water flow is not detected in the hydraulic cycle or Pump defective,
+            72 Indoor Thermostat Heater Alarm High temperature is detected in Electric Heater ,
+            73 Indoor Mixing over-temperature limit protection for Mixed circuit. Circuit 2 supply temperature > Target temperature + offset,
+            74 Indoor Unit over-temperature limit protection Two > Tmax +5K,
+            75 Indoor Freeze Protection by Cold water inlet, outlet temperature detection,
+            76 Indoor Freeze Protection Stop by indoor liquid temperature thermistor ,
+            77 Indoor-LCD Receiver Communication failure No Opentherm/Hlink communication for a continuous period of 10 minutes.,
+            78 Indoor-LCD RF Communication failure There is no communication for 1 hour with on or two RF receives which are bound to the RF-Bridge.,
+            79 Indoor-outdoor Unit Capacity setting Error There is no concordance between indoor outdoor unit capacity ,
+            80 Indoor LCD H-link RCS transmission error No H-link communication for a continuous period of 1 minute between Indoor and LCD User control by connection wiring (breaking, wiring error, etc.) LCD (If no H-LINK RCS has no power),
+            81 Indoor Momentary Power interruption or Low voltage detected,
+            100 Indoor-LCD Compressor protection "Compressor failure. This alarm code appears when the following alarms 02, 07, 08, 45, 47 occur three times within 6 hours." NOTE This alarm is shown in the outdoor unit with alarm code “EE.”, 
+            101 Indoor Activation of high pressure switch,
+            102 Indoor Activation of protection control for excessively high pressure Stop after P12 retry due to discharge pressure Pd ≥ 2.78 MPa continued for 10 seconds.,
+            104 Indoor Activation of low control Stop after P06 retry due to Ps ≤ 0.15 MPa continued for 90 seconds,
+            104 Indoor Activation of low control Immediate stop with Ps ≤ 0.1 MPa ,
+            105 Indoor Excessively low pressure difference Stop after P11 retry due to pressure ratio ε < 1.8 continued for 3 minutes.,
+            106 Indoor Excessively high discharge gas temperature Td ≥ 120 ºC continued for 10 minutes, Td ≥ 140 ºC continued for 5 seconds,
+            129 Indoor Failure of discharge gas pressure sensor Loose, disconnected, broken or short-circuited connector,
+            130 Indoor Failure of suction gas pressure sensor Loose, disconnected, broken or short-circuited connector,
+            132 Indoor Transmission error between Inverter PCB and Main PCB Described in inverter abnormal stop control,
+            134 Indoor Abnormality of Power Supply Phase Reverse/Open Phase,
+            135 Indoor Incorrect PCB Setting Wrong DSW setting in the case of Co041,
+            151 Indoor Excessively low voltage or excessively high voltage for the inverter Described in inverter abnormal stop control,
+            152 Indoor Abnormal operation of the current sensor Described in inverter abnormal stop control,
+            153 Indoor Activation of protection for inverter instantaneous over current Described in inverter abnormal stop control,
+            154 Indoor Transistor module protection activation Described in inverter abnormal stop control,
+            155 Indoor Increase in the inverter fin temperature or abnormality Described in inverter abnormal stop control,
+            156 Indoor Inverter non operation Described in inverter abnormal stop control,
+            157 Indoor Inverter Communication abnormality Described in inverter abnormal stop control,
+          </div>
+
+          <script>
+            const searchInput = document.getElementById("searchInput");
+            const searchResults = document.getElementById("searchResults");
+            const hiddenText = document.getElementById("hiddenText").textContent.split("\n");
+
+            searchInput.addEventListener("change", function() {
+              const searchCode = parseInt(searchInput.value);
+              let found = false;
+              for (let i = 0; i < hiddenText.length; i++) {
+                const line = hiddenText[i].trim();
+                if (line.startsWith(searchCode.toString())) {
+                  searchResults.value = line.substring(line.indexOf(" ") + 1).trim();
+                  found = true;
+                  break;
+                }
+              }
+
+              if (!found) {
+                searchResults.value = "Code not found.";
+              }
+            });
+          </script>
+        </body>
+        </html>

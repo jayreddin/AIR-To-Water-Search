@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Air To Water</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      margin-top: 20px;
+    }
+
+    .brand-button {
+      padding: 10px 20px;
+      margin: 10px 0; /* Adjust margins for vertical spacing */
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 100%; /* Make buttons full width */
+    }
+
+    @media (min-width: 768px) { /* Responsive for desktop view */
+      .button-container {
+        flex-direction: row; /* Arrange buttons horizontally */
+        justify-content: center; /* Center horizontally */
+      }
+
+      .brand-button {
+        width: auto; /* Buttons take their natural width */
+        margin: 0 10px; /* Adjust margins for horizontal spacing */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Air To Water</h1>
+  <div class="button-container">
+    <a href="joule_victorum.html" class="brand-button">Joule Victorum</a>
+    <a href="joule_samsung.html" class="brand-button">Joule Samsung</a>
+    <a href="joule_kodiak.html" class="brand-button">Joule Kodiak</a>
+    <a href="grant.html" class="brand-button">Grant</a>
+    <a href="viessman.html" class="brand-button">Viessman</a>
+    <a href="hitachi.html" class="brand-button">Hitachi</a>
+    <a href="lg.html" class="brand-button">LG</a>
+    <a href="panasonic.html" class="brand-button">Panasonic</a>
+    <a href="dedietrich.html" class="brand-button">Dedietrich</a>
+  </div>
+</body>
+</html>
