@@ -2,66 +2,8 @@
         <html>
         <head>
           <title>Joule Victorum - Air To Water</title>
-          <style>
-            body {
-              font-family: sans-serif;
-              text-align: center;
-            }
-
-            .menu-button, .back-button {
-              padding: 10px 20px;
-              margin: 20px;
-              background-color: #4CAF50;
-              color: white;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-              text-decoration: none;
-            }
-
-            .search-bar {
-              display: flex;
-              justify-content: center;
-              margin-top: 20px;
-              align-items: center;
-            }
-
-            select {
-              padding: 8px;
-              border: 1px solid #ccc;
-              border-radius: 5px;
-              width: 100px;
-              margin-right: 10px;
-            }
-
-            button {
-              padding: 8px 15px;
-              background-color: #4CAF50;
-              color: white;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-              transition: background-color 0.3s ease;
-            }
-
-            button:hover {
-              background-color: #3e8e41;
-            }
-
-            #searchResults {
-              margin-top: 10px;
-            }
-
-            textarea {
-              width: 300px;
-              height: 100px;
-              resize: vertical;
-              padding: 8px;
-              border: 1px solid #ccc;
-              border-radius: 5px;
-            }
-          </style>
-        </head>
+          <link rel="stylesheet" href="style.css">
+                  </head>
         <body>
           <h1>Joule Victorum</h1>
           <a href="index.html" class="back-button">Back to Home</a>
@@ -170,27 +112,7 @@
             157 Indoor Inverter Communication abnormality Described in inverter abnormal stop control,
           </div>
 
-          <script>
-            const searchInput = document.getElementById("searchInput");
-            const searchResults = document.getElementById("searchResults");
-            const hiddenText = document.getElementById("hiddenText").textContent.split("\n");
-
-            searchInput.addEventListener("change", function() {
-              const searchCode = parseInt(searchInput.value);
-              let found = false;
-              for (let i = 0; i < hiddenText.length; i++) {
-                const line = hiddenText[i].trim();
-                if (line.startsWith(searchCode.toString())) {
-                  searchResults.value = line.substring(line.indexOf(" ") + 1).trim();
-                  found = true;
-                  break;
-                }
-              }
-
-              if (!found) {
-                searchResults.value = "Code not found.";
-              }
-            });
-          </script>
+          <script src="script.js">
+            </script>
         </body>
         </html>
