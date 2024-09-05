@@ -1,13 +1,82 @@
         <!DOCTYPE html>
         <html>
         <head>
-          <title>Joule Victorum - Air To Water</title>
+          <title>Hitachi Yutaki - Air To Water</title>
           <link rel="stylesheet" href="style.css">
                   </head>
         <body>
-          <h1>Joule Victorum</h1>
+          <h1>Hitachi Yutaki</h1>
           <a href="index.html" class="back-button">Back to Home</a>
           <a href="#" class="menu-button">Menu</a>
+          <style>
+            body {
+                font-family: sans-serif;
+                text-align: center;
+                background-color: #f0f0f0;
+                padding: 20px;
+            }
+
+            .menu-button, .back-button {
+                padding: 10px 20px;
+                margin: 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .search-bar {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+              width: 100%;
+            text-align: center;
+            }
+
+            select {
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: 80%;
+              text-align: center;
+              text-align-last: center;
+            }
+
+            .card {
+                width: 300px;
+                height: auto;
+                border-radius: 20px;
+                background: #f5f5f5;
+                position: relative;
+                padding: 1.8rem;
+                border: 2px solid #c3c6ce;
+                transition: 0.5s ease-out;
+                margin: 20px auto;
+            }
+
+            .result-box {
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                padding: 10px;
+                margin: 5px 0;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                display: none; /* Initially hidden */
+            }
+
+            .text-title {
+                font-size: 1.5em;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .card:hover {
+                border-color: #008bf8;
+                box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+            }
+            </style>
 
           <div class="search-bar">
             <select id="searchInput">
@@ -57,10 +126,13 @@
               <option value="156">156</option>
               <option value="157">157</option>
             </select>
-            <button onclick="searchHiddenText()">Search</button>
-          </div>
+          </div>  
 
-          <textarea id="searchResults" readonly></textarea> 
+            <div class="card">
+                <div class="card-details">
+                    <div id="resultBox" class="result-box"></div>
+                </div>
+            </div>
 
           <div id="hiddenText" style="display: none;">
             3 Communication Transmission Alarm (Not outdoor unit detected) Loose, disconnected, broken or short-circuited connector,
@@ -112,7 +184,24 @@
             157 Indoor Inverter Communication abnormality Described in inverter abnormal stop control,
           </div>
 
-          <script src="script.js">
+          <script>
+            const searchInput = document.getElementById('searchInput');
+            const resultBox = document.getElementById('resultBox');
+            const hiddenText = document.getElementById('hiddenText').innerText.split(',');
+
+            searchInput.addEventListener('change', function() {
+                const selectedValue = this.value;
+                resultBox.style.display = 'none'; // Hide the result box initially
+                resultBox.innerHTML = ''; // Clear previous content
+
+                if (selectedValue) {
+                    const foundText = hiddenText.find(text => text.trim().startsWith(selectedValue));
+                    if (foundText) {
+                        resultBox.innerHTML = foundText.trim(); // Display the found text
+                        resultBox.style.display = 'block'; // Show the result box
+                    }
+                }
+            });
             </script>
         </body>
         </html>
